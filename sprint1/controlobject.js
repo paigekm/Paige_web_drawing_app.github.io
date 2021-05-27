@@ -1,10 +1,4 @@
 console.log(" control object js is called ")
-// central object for the program
-// contains listeners to check for mouse events
-// draws the guide rectangle if the user is dragging to create a shape
-// contains the list (objectSet) of all objects created by the user interaction
-// will draw all of these on the screen in it's update function
-// at the moment it takes no start parameters
 
 class ControlObject{
     constructor(){
@@ -92,7 +86,7 @@ class ControlObject{
         ctx.beginPath();
         ctx.rect(x,y,w,h);
         ctx.lineWidth = 1;
-        ctx.strokeStyle = "colArray[0][3][1]";
+        ctx.strokeStyle = "colArray[0][3]";
         ctx.stroke();
     }
 
