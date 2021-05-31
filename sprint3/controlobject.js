@@ -46,8 +46,8 @@ class ControlObject{
         // single event of the mouse clicking down
         //this.draw();
         // checks mouse down action has registered
-        console.log("mouse down")
-        console.log(this.inBounds)
+        //console.log("mouse down")
+        //console.log(this.inBounds)
     
 
     }
@@ -76,9 +76,9 @@ class ControlObject{
                 // add new rectangle to the object list
                 this.objectSet.push(temp);
                 // test it has been added to the object list
-                console.log(this.objectSet)
+                //console.log(this.objectSet)
             }
-        console.log("mouse up")
+        //console.log("mouse up")
     }
 }
 

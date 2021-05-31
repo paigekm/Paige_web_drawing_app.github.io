@@ -1,4 +1,4 @@
-console.log(" rectangle js is called")
+console.log(" objects js is called")
 
 //creates a class for rectangle
 class Rectangle{
@@ -24,3 +24,5 @@ class Rectangle{
     }
 
 }
+
+//creates a class for ellipse
