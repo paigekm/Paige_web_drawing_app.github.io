@@ -24,6 +24,7 @@ class Button{
         console.log("Clicked");
         if(this.inBounds){
             Button.clicked = this;
+            Button.shape = this.text;
         }
 
     }
@@ -80,3 +81,4 @@ class Button{
 
 }
 Button.clicked = ""
+Button.shape = ""

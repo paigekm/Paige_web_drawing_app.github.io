@@ -12,7 +12,7 @@ class ControlObject{
         // sets mouse down to be false, so it only becomes true when the user clicks down
         this.mouseDown = false;
 
-        // defining the local x,y,w,h 
+        // defining the rectangle x,y,w,h 
         this.x = x;
         this.y = y;
         this.box_width = w;
@@ -72,7 +72,12 @@ class ControlObject{
             // create a new rectangle object
             // this has the dimensions from the draw guide
             if(this.w != 0 && this.h != 0 ){
-                var temp = new Rectangle(this.xMouseStart, this.yMouseStart,this.w,this.h,"rgb(10,60,120")
+                if (Button.shape == "Rectangle"){
+                    var temp = new Rectangle(this.xMouseStart, this.yMouseStart,this.w,this.h,"rgb(10,60,120" )
+                }
+                else if (Button.shape == "Ellipse"){
+                    var temp = new Ellipse(this.xMouseStart, this.yMouseStart,this.w,this.h,"rgb(10,60,120" )
+                }
                 // add new rectangle to the object list
                 this.objectSet.push(temp);
                 // test it has been added to the object list
