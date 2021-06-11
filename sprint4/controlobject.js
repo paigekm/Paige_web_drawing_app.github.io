@@ -73,10 +73,10 @@ class ControlObject{
             // this has the dimensions from the draw guide
             if(this.w != 0 && this.h != 0 ){
                 if (Button.shape == "Rectangle"){
-                    var temp = new Rectangle(this.xMouseStart, this.yMouseStart,this.w,this.h,"rgb(10,60,120" )
+                    var temp = new Rectangle(this.xMouseStart, this.yMouseStart,this.w,this.h,Swatch.selected)
                 }
                 else if (Button.shape == "Ellipse"){
-                    var temp = new Ellipse(this.xMouseStart, this.yMouseStart,this.w,this.h,"rgb(10,60,120" )
+                    var temp = new Ellipse(this.xMouseStart, this.yMouseStart,this.w,this.h,Swatch.selected)
                 }
                 // add new rectangle to the object list
                 if(temp){

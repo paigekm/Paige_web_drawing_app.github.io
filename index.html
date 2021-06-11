@@ -36,6 +36,7 @@
 					<li><a href="#1">Sprint 1</a></li>
 					<li><a href="#2">Sprint 2</a></li>
 					<li><a href="#3">Sprint 3</a></li>
+					<li><a href="#4">Sprint 4</a></li>
 				</ul>
 			</div>
 			<div class="content">
@@ -116,6 +117,14 @@
   <img class="img-responsive" src="assets/img/v2_second_problem_plan.jpg" alt=""><br>
   <img class="img-responsive" src="assets/img/v2_second_problem.png" alt=""><br>
   <br><br>
+  <p>Third Problem:</p><br>
+  <p>When the mouse is dragged outside of the drawing page, and then also beyond the canvas space, the shape doesn't draw/get placed once they reenter. <br>
+Possible solution: as soon as the mouse leaves the canvas, it acts as if mouseUp, and the shape is placed (even if shape appears cut off).</p>
+  <video class="center" controls>
+	<source src="assets/vids/third_problem.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+  <br><br>
   <p>Final working test of Version 2:</p>
   <video class="center" controls>
 	<source src="assets/vids/v2_finaltest_working_wlimits.mov" type="video/mp4">
@@ -135,8 +144,96 @@
 <p>Boards</p>
 <p>Link to the Canvas Page</p>
 <p>Test</p>
-<p>Reflect</p>
+<img class="img-responsive" src="assets/img/buttons_plan_steps.jpg" alt=""><br><br>
+<div class="col-container">
+	<div class="col">
+		<h2>3.1</h2>
+<p>Initial test to show basic buttons appearing:</p>
+<video class="center" controls>
+	<source src="assets/vids/sprint3_initialtest.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video><br>
+  </div>
+  <div class="col">
+  <h2>3.2</h2>
+  <p>Test of making an ellipse appear on the drawing page:</p><br>
+  <img class="img-responsive" src="assets/img/ellipse_appearing.jpg" alt=""><br><br>
+</div></div>
+
+<div class="col-container">
+	<div class="col">
+		<h2>3.3</h2>
+  <p>Test to show ellipse + bounding box being drawn instead of the rectangle that was drawn in Version2:</p>
+  <video class="center" controls>
+	<source src="assets/vids/ellipse_being_drawn_test.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video><br><br></div>
+
+	<div class="col">
+		<h2>3.4</h2>
+  <img class="img-responsive" src="assets/img/3.4_plan.jpg" alt=""><br><br>
+  <p>Pseudo code:</p><pre style="font-size: 1.5em;">
+	<code class="javscript"> if (Button.shape == "Rectangle"){
+		var temp = new Rectangle(this.xMouseStart, this.yMouseStart,this.w,this.h,"rgb(10,60,120" )
+	}
+	else if (Button.shape == "Ellipse"){
+		var temp = new Ellipse(this.xMouseStart, this.yMouseStart,this.w,this.h,"rgb(10,60,120" )
+	}
+	// add new rectangle to the object list
+	this.objectSet.push(temp);
+		}</code>
+	</pre>
+	<pre style="font-size: 1.5em;">
+		<code class="javscript"> 
+		Button.clicked = ""
+		Button.shape = ""</code>
+		</pre></div>
+<p>Final test showing the program working:</p><br>
+<video class="center" controls>
+	<source src="assets/vids/v3_WORKING.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+  </div>
+<br>
+<p>Reflect</p><br>
+<p>Problem found when testing:</p>
+<p>When I tested my program, I found the program crashed if the user tried to click in the drawing page without selecting a button first.
+	It only continuing working if the user selected Rect or Ellipse button and then tried to draw in the page. 
+</p>
+<video class="center" controls>
+	<source src="assets/vids/problem_about_pushing_temp_into_objectset.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+  <br><p>This is a major design error,
+	as when a user first goes on a webpage, particularly young kids who are my expected users for this Maths drawing application, they often click 
+	around first to familiarise themselves with the page - and I wouldn't want my application to crash in this event.</p>
+  <p>Solution:</p>
+  <img class="img-responsive" src="assets/img/codesolution_problemv3.jpg" alt=""><br>
+  <p>I created this loop around the object set being pushed, so it only gets pushed once there is something to be pushed (eg. when temp exists).<br>
+<br>This error made me consider my future step, which is to be able to unselect buttons after you have clicked on them.</p><br>
+
 <hr>
+<h1 id="4">Sprint Four</h1>
+<p><b>
+   Create a colour grid (made up of swatches) on the canvas area (where the buttons are) outside of the drawing page. 
+   The user can select a colour from the grid, the state of the swatch is communicated by a stroke change,
+    and then the next shape will be drawn in this colour.</b></p>
+<p>Plan</p>
+<img class="img-responsive" src="assets/img/v4_plan.jpg" alt=""><br>
+<img class="img-responsive" src="assets/img/v4_steps.jpg" alt=""><br>
+<p>Stand up 9th June:</p>
+<img class="img-responsive" src="assets/img/standup_v4.jpg" alt=""><br>
+<p>Boards</p>
+<img class="img-responsive" src="assets/img/v4_kanban_board.jpg" alt=""><br>
+<p>Link to the Canvas Page</p>
+<p>Test</p>
+<p>Reflect</p>
+<img class="img-responsive" src="assets/img/design_decision_whereputswatchjs.jpg" alt=""><br>
+
+<p>Problem I found during testing:</p><br>
+<p>To reflect which button has been selected I changed the stroke thickness of the box's outline. However I noticed that the first button selected, doesn't appear as unselected, until the second button is clicked on, and then the mouse is moved.
+	<br>The mouse having to move before the prior button appearing unselected, was due to where I placed my code to change stroke_outline.
+</p>
 
 <hr>
 <h1> Relevant Implications Summary</h1>
@@ -144,15 +241,7 @@
  <hr>
 <!-- Paragraphs -->
 <h3>Example code insert (don't do too much of this)</h3>
-<pre style="font-size: 1.5em;">
-<code class="javscript"> function inBoundsCheck(xM, yM, x, y, w, h){
-        if( xM > x && xM < x+w && yM > y && yM < y+h){
-            return true;
-        }else{
-            return false;
-        }
-    }</code>
-</pre>
+
  
             <hr>     
                 
