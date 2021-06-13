@@ -106,7 +106,7 @@ class Swatch{
         this.yMouse = 0;
         this.inBounds = false;
 
-        this.stroke_outline = 5;
+        this.stroke_outline = 1;
     }
 
     mClick(e){
@@ -152,9 +152,9 @@ class Swatch{
     update(){
         this.draw();
         if(this.inBounds == true || Swatch.clicked == this){
-            this.stroke_outline = 15;
-        }else{
             this.stroke_outline = 5;
+        }else{
+            this.stroke_outline = 1;
         }
     }
     
