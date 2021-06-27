@@ -94,6 +94,7 @@ class Polygon{
         ctx.fill();
         //ctx.stroke();
     }
+
 }
 
 class Star{
@@ -178,8 +179,9 @@ class Dot{
         // x and y variable is updated to be the current mouse position
         this.xMouse = e.offsetX;
         this.yMouse = e.offsetY;
-        if(this.mouseDown == true && this.finish == false){
-            var temp = new Ellipse(this.xMouse, this.yMouse, this.r, this.r, 0,0,2*Math.PI, Swatch.selected)
+        if(this.finish == false){
+            console.log(Swatch.selected)
+            var temp = new Ellipse(this.xMouse, this.yMouse, this.r, this.r, Swatch.selected)
             this.dotSet.push(temp);
         }
     }

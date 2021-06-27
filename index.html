@@ -37,6 +37,11 @@
 					<li><a href="#2">Sprint 2</a></li>
 					<li><a href="#3">Sprint 3</a></li>
 					<li><a href="#4">Sprint 4</a></li>
+					<li><a href="#5">Sprint 5</a></li>
+					<li><a href="#6">Sprint 6</a></li>
+					<li><a href="#7">Sprint 7</a></li>
+					<li><a href="#8">Sprint 8</a></li>
+
 				</ul>
 			</div>
 			<div class="content">
@@ -62,7 +67,7 @@
 				<img class="img-responsive" src="assets/img/proj_backlog_2.jpg" alt=""><hr><br><br>
 
     <!-- Heading levels -->
-    <h1 id="1" >Sprint One</h1>
+    <h1 id="1" >Sprint One: Minimum product</h1>
 	<p><b>My aim in this Version, is to create a minimum product; a program that draws (click and drag) one shape on the canvas.</p></b>
 <p>Plan</p>
 <p>Boards</p>
@@ -70,7 +75,7 @@
 	<source src="assets/vids/sprint1_kanban_board.mov" type="video/mp4">
   Your browser does not support the video tag.
   </video>
-<p>Link to the Canvas Page</p>
+  <br><a href="sprint1/sprint1.html">Link to the canvas page</a><br><br><br>
 <p>Errors I found through testing:</p>
 <div class="col-container">
 	<div class="col">
@@ -93,13 +98,13 @@
   </video>
  <p>Reflect</p>
 <hr>
-<h1 id="2">Sprint Two</h1>
+<h1 id="2">Sprint Two: Drawing Page</h1>
 <p><b>Create a drawing page/area on the canvas which will register when the mouse is clicked to draw shapes.</b></p>
 <p>Plan</p>
 <img class="img-responsive" src="assets/img/v2_plan.jpg" alt=""><br>
 <p>Boards</p>
 <img class="img-responsive" src="assets/img/v2_kanbanboard.jpg" alt=""><br>
-<p>Link to the Canvas Page</p>
+<br><a href="sprint2/sprint2.html">Link to the canvas page</a><br><br><br>
 <p>Test with errors:</p>
 <video class="center" controls>
 	<source src="assets/vids/v2_failtest.mov" type="video/mp4">
@@ -132,7 +137,7 @@ Possible solution: as soon as the mouse leaves the canvas, it acts as if mouseUp
   </video>
 <p>Reflect</p>
 <hr>
-<h1 id="3">Sprint Three</h1>
+<h1 id="3">Sprint Three: Rectangle and Ellipse buttons</h1>
 <p><b>Introducing a simple two buttons assigning whether to draw a rectangle or ellipse shape. These buttons are clickable as they are on the canvas but outside of the drawing page.</b></p>
 <p>Plan</p><br>
 <img class="img-responsive" src="assets/img/v3_plan_1.jpg" alt=""><br>
@@ -142,7 +147,7 @@ Possible solution: as soon as the mouse leaves the canvas, it acts as if mouseUp
 <p>Standup</p><br>
 <img class="img-responsive" src="assets/img/v3_standup.jpg" alt=""><br><br>
 <p>Boards</p>
-<p>Link to the Canvas Page</p>
+<br><a href="sprint3/sprint3.html">Link to the canvas page</a><br><br><br>
 <p>Test</p>
 <img class="img-responsive" src="assets/img/buttons_plan_steps.jpg" alt=""><br><br>
 <div class="col-container">
@@ -213,7 +218,7 @@ Possible solution: as soon as the mouse leaves the canvas, it acts as if mouseUp
 <br>This error made me consider my future step, which is to be able to unselect buttons after you have clicked on them.</p><br>
 
 <hr>
-<h1 id="4">Sprint Four</h1>
+<h1 id="4">Sprint Four: Colour management</h1>
 <p><b>
    Create a colour grid (made up of swatches) on the canvas area (where the buttons are) outside of the drawing page. 
    The user can select a colour from the grid, the state of the swatch is communicated by a stroke change,
@@ -225,7 +230,7 @@ Possible solution: as soon as the mouse leaves the canvas, it acts as if mouseUp
 <img class="img-responsive" src="assets/img/standup_v4.jpg" alt=""><br>
 <p>Boards</p>
 <img class="img-responsive" src="assets/img/v4_kanban_board.jpg" alt=""><br>
-<p>Link to the Canvas Page</p>
+<br><a href="sprint4/sprint4.html">Link to the canvas page</a><br><br><br>
 <p>Test</p>
 <p>Final test to show swatches working:</p>
 		<video class="center" controls>
@@ -273,100 +278,128 @@ Possible solution: as soon as the mouse leaves the canvas, it acts as if mouseUp
 
 
 <hr>
+
+<h1 id="5" >Sprint Five: Polygon</h1>
+	<p><b>My aim in this Version is to create a button which when selected draws a polygon. The type of polygon is determined by user entry of number of sides.</p></b>
+<p>Plan</p>
+<img class="img-responsive" src="assets/img/sprint5plan.jpg" alt=""><br>
+<p>Boards</p>
+<img class="img-responsive" src="assets/img/sprint5kanban.jpg" alt=""><br>
+<br><a href="sprint5/sprint5.html">Link to the canvas page</a><br><br><br>
+  <p>Final working test of Sprint 5</p>
+  <img class="img-responsive" src="assets/img/sprint5_final_test.jpg" alt=""><br> 
+ <p>Reflect</p>
+ <p>In the future, I will add a text insert/heading above my sub-buttons to explain what they do. This will help my user to interact with the program more easily.<br><br>
+I also noticed that even before I had selected a sub-button (to select the num of sides the polygon will have), my program allows the user to draw a deafult polygon.<br>
+This is definitely better for usability, than if the polygon isn't drawn until you select a sub-button, however I think my communication with the user could be clearer. Through testing I found that
+the default polygon that is drawn is a pentagon, and so I made a change so that the sub-button for 5 is shown to be 'selected' (colour scheme, outline width etc.) right from when the application is opened, in order to inform the user what default polygon will be drawn. This might also help their understanding of what the sub-buttons do.<br>
+I then made sure I created this same setClicked() function, for any future sets of sub-buttons which had a default choice selected (eg. for star num of points, and for size of brush stroke).</p>
+<div class="col-container">
+	<div class="col">
+		<img class="img-responsive" src="assets/img/5_reflection_before.jpg" alt="">
+		 </div>
+	 <div class="col">
+	<img class="img-responsive" src="assets/img/5_reflection_after.jpg" alt="">
+	</div>
+	</div>
+<hr>
+
+<h1 id="6" >Sprint Six: Star</h1>
+	<p><b>My aim in this Version is to create a star function to create a star drawing option. Button to create a star on the canvas, with side buttons to determine the number of points of the star.</p></b>
+<p>Plan</p>
+<img class="img-responsive" src="assets/img/sprint6_plan.jpg" alt="">
+<p>Boards</p>
+<img class="img-responsive" src="assets/img/sprint6_kanban.jpg" alt="">
+<br><a href="sprint6/sprint6.html">Link to the canvas page</a><br><br><br>
+<p>Test</p>
+<p>What I learnt about the design process was that building a new feature incrementally is really important. 
+	
+	<div class="col-container">
+		<div class="col">
+	   <img class="img-responsive" src="assets/img/5_test_starappears.jpg" alt="">
+		<p>The first part of testing the star, was to simply create a star class, and create a simple variable in the main to test it appears on the canvas.</p>
+		</div>
+		<div class="col">
+			<img class="img-responsive" src="assets/img/6_newstarbutton.jpg" alt="">
+			 <p>Then, firstly I would create a new button for 'star' and test it, then link pushing the new star with when the button was selected.</p>
+			 </div>
+		 <div class="col">
+		<img class="img-responsive" src="assets/img/final_test_star.jpg" alt="">
+		<p>Finally I could create and test a set of sub-buttons for the number of points it would have, and then link the different shaped stars to this set of sub-buttons.</p>
+		</div>
+		</div>
+		<p>Reflect</p>
+		<p>When I was testing this sprint, I found that the drawing page quickly got very full and distracting. This prompted me to consider a clear and/or undo button, which I will address in my next sprint. <br>
+		This will improve my testing process, as I can test my new shape additions comprehensively without filling up the drawing page as quickly.</p>
+<hr>
+
+<h1 id="7" >Sprint Seven: Clear and Undo</h1>
+	<p><b>My aim in this Version is to create clear and undo buttons on the canvas; enabling the most recent shape added to be removed, or the whole drawing page to be cleared of shapes.</p></b>
+<p>Plan</p>
+<img class="img-responsive" src="assets/img/sprint7_plan.jpg" alt="">
+<p>Boards</p>
+<img class="img-responsive" src="assets/img/sprint7_kanban.jpg" alt="">
+<br><a href="sprint7/sprint7.html">Link to the canvas page</a><br><br><br>
+  <p>Final working test of Sprint 7</p>
+  <video class="center" controls>
+	<source src="assets/vids/7_undoclear_finaltest.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+ <p>Reflect</p>
+ <p>As mentioned in my Sprint 7 plan, these new features will speed up my testing process in future versions.<br>
+In the future I would hope to create a redo button. <br>Through testing the undo button, I also started to consider how else I could adapt individual shapes that had already been added to the drawing page. 
+<br>Something that would be interesting to investigate in future versions is being able to click on an individual shape and change it's colour or number of sides/points. </p>
+<hr>
+
+<h1 id="8" >Sprint Eight: Brush</h1>
+	<p><b>My aim in this Version is to create a brush feature + button. This allows the user to create a brush stroke line, which follows their mouse movement.</p></b>
+<p>Plan</p>
+<img class="img-responsive" src="assets/img/sprint8_extra.jpg" alt=""><br><Br>
+<img class="img-responsive" src="assets/img/sprint8_plan.jpg" alt="">
+<img class="img-responsive" src="assets/img/sprint8_plan_cont.jpg" alt="">
+<p>Boards</p>
+<img class="img-responsive" src="assets/img/8_kanban.jpg" alt="">
+<br><a href="sprint8/sprint8.html">Link to the canvas page</a><br><br><br>
+<p>Testing</p>
+<div class="col-container">
+	<div class="col">
+		<video class="center" controls>
+			<source src="assets/vids/brush_stroke_allover.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		  </video>
+	<p>The first part of testing the brush, was to create a dot class, loop these dots to form a stroke when the mouse clicked down, and to test it appears on the canvas.</p>
+	</div>
+	 <div class="col">
+		<video class="center" controls>
+			<source src="assets/vids/step2_brushstroke.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		  </video>
+	<p>Then I created three buttons (for 3 different brush stroke widths) and tested that they appeared on the canvas too. I also tested that when they were clicked on, they physically appeared 'selected' by changing colour and stroke width, to inform the user of their state change.<br>
+	After these two tests I could integrate the two together.</p>
+	</div>
+	</div>
+  <p>Final working test of Sprint 8</p>
+  <video class="center" controls>
+	<source src="assets/vids/working_brush.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+  <p>Errors I found through testing:</p>
+<img class="img-responsive" src="assets/img/8_thingslearnt.jpg" alt="">
+ <p>Reflect</p>
+ <p>Now this new brush feature has been added, I plan to reorder the layout of my web interface. I will rearrange and resize some of the buttons so it is even more clear to the user what all the buttons do, and how they should interact with the application!<br>
+I also plan to adapt the colour scheme so it is more appealing to the eye - although I will keep it colourful as my target users are primary aged kids and I want them to engage with the Maths program as much as possible, to best help their learning. <br>
+I will also reflect more on my original purpose for the application and add features to aid Maths learning. One example is printing the names of the different polygons, and number of points on the star, when these shapes appear on the drawing page.</p>
+<hr>
+
+
 <h1> Relevant Implications Summary</h1>
  <hr>
+
+ <p>Final plans and future additions:</p>
+ <img class="img-responsive" src="assets/img/end_projbacklog_1.jpg" alt="">
+ <img class="img-responsive" src="assets/img/end_projbacklog2.jpg" alt="">
+ <img class="img-responsive" src="assets/img/end_projbacklog3.jpg" alt="">
  <hr>
-<!-- Paragraphs -->
-<h3>Example code insert (don't do too much of this)</h3>
-
- 
-            <hr>     
-                
-                <h3>Video Test Example</h3>
-
-
-				<video class="center" controls>
-					<source src="assets/vids/littleTest.mp4" type="video/mp4">
-				  Your browser does not support the video tag.
-				  </video>
-					<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-					<hr>
-
-					<!-- Responsive images -->
-					<h3>Example image placements</h3>
-					<p>For images to be responsive (so that they will rescale to suit the width of the parent, use the <code>.img-responsive</code> class.</p>
-					<img class="img-responsive" src="assets/img/place_holder.png" alt="">
-                <hr>
-                <div class="col-container">
-                <div class="col">
-               <img class="img-responsive" src="assets/img/place_holder_sm.jpg" alt="">
-                <p>Ut wisi enim ad minim veniam, <a href="#">quis nostrud exerci tation ullamcorper</a> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel.</p>
-                </div>
-                 <div class="col">
-                <img class="img-responsive" src="assets/img/place_holder_sm.jpg" alt="">
-                <p>Ut wisi enim ad minim veniam, <a href="#">quis nostrud exerci tation ullamcorper</a> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel.</p>
-                </div>
-                </div>
-                <hr>
-               
-              
-
-					<!-- Lists -->
-					<h3>Unordered list</h3>
-					<p>Unordered lists are used to markup lists where list items do not require numbering.</p>
-					<ul>
-						<li>Ut wisi enim ad minim veniam</li>
-						<li>Quis nostrud exerci tation</li>
-						<li>Lamcorper suscipit lobortis nis</li>
-						<li>Ut aliquip ex ea commodo consequat</li>
-						<li>Duis autem vel eum iriure dolor</li>
-					</ul>
-					<hr>
-
-					<h3>Ordered list</h3>
-					<p>Ordered lists are used to markup lists where list items require numbering.</p>
-					<ol>
-						<li>Hendrerit in vulputate velit esse</li>
-						<li>Olestie consequat</li>
-						<li>Vel illum dolore eu feugiat</li>
-						<li>Nulla facilisis at vero eros</li>
-						<li>Accumsan et iusto odio</li>
-					</ol>
-					<hr>
-
-					<h3>Unstyled list</h3>
-					<p>You can make the list unstyled using the <code>list-unstyled</code> class.</p>
-					<ul class="list-unstyled">
-						<li>Ut wisi enim ad minim veniam</li>
-						<li>Quis nostrud exerci tation</li>
-						<li>Lamcorper suscipit lobortis nis</li>
-						<li>Ut aliquip ex ea commodo consequat</li>
-						<li>Duis autem vel eum iriure dolor</li>
-					</ul>
-					<hr>
-
-					<h3>Inline list</h3>
-					<p>You can make the list display inline using the <code>list-inline</code> class.</p>
-					<ul class="list-inline">
-						<li>One</li>
-						<li>Two</li>
-						<li>Three</li>
-						<li>Four</li>
-					</ul>
-					<hr>
-
-				
-
-					<h3>Buttons</h3>
-					<p>You can apply the <code>btn</code> class to any element that requires a button style.</p>
-					<p><a href="#" class="btn">Submit</a></p>
-					<hr>
-
-
-
-               
-            
-
 			
 			</div>
 			<div class="footer">

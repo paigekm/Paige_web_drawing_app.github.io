@@ -75,15 +75,7 @@ class Polygon{
 
         ctx.beginPath();
         ctx.lineWidth = 5;
-        /*
-        make a variable n = 2*this.n
-         run loop i<=n
-        in the loop 
-        if n%2 == 0
-        var R = this.r
-        else
-        var R = this.r/2
-        */
+       
         for(var i=0; i<=this.n; i++){
             /*
             */

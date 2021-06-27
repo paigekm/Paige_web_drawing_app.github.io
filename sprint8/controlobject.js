@@ -48,6 +48,25 @@ class ControlObject{
         // checks mouse down action has registered
         //console.log("mouse down")
         //console.log(this.inBounds)
+       
+
+        if(this.inBounds == true && Button.shape == "Brush"){
+            console.log(CircleButton.shape)
+
+            if(CircleButton.shape == "L"){
+                console.log("L")
+                var temp = new Dot(20, Swatch.selected);
+                this.objectSet.push(temp);
+            }else if(CircleButton.shape == "M"){
+                console.log("M")
+                var temp = new Dot(13, Swatch.selected);
+                this.objectSet.push(temp);
+            }else if(CircleButton.shape == "S"){
+                console.log("S")
+                var temp = new Dot(7, Swatch.selected);
+                this.objectSet.push(temp);
+        }
+        }
     
 
     }
@@ -71,7 +90,7 @@ class ControlObject{
         // mouse position when mouse unclicks
         this.mouseDown = false;
         if(this.inBounds == true){
-            // create a new rectangle object
+            // create a new shape object
             // this has the dimensions from the draw guide
             if(this.w != 0 && this.h != 0 ){
                 if (Button.shape == "Rectangle"){
@@ -131,7 +150,7 @@ class ControlObject{
         }
         ctx.restore();
 
-        if(this.mouseDown == true && this.inBounds == true){
+        if(this.mouseDown == true && this.inBounds == true && CircleButton.shape !== "L" && CircleButton.shape !== "M" && CircleButton.shape !== "S" ){
             this.drawGuide();
         }
 
@@ -151,5 +170,7 @@ class ControlObject{
         ctx.strokeStyle = "colArray[0][3]";
         ctx.stroke();
     }
+
+
 
 }
