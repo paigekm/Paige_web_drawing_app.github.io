@@ -44,9 +44,13 @@ var brushstroke_list = []
 for (var i=0; i<brushstroke_name_list.length; i++){
     var temp = new CircleButton(xB+3*(i*r),yB,r,brushstroke_name_list[i],colArray[0][0],colArray[0][1],colArray[0][2], colArray[0][3])
     brushstroke_list.push(temp);
-    if(i==0){
-        temp.setClicked();
+    
+    if(i == 0){
+        //console.log(brushstroke_list[0].setClicked())
+       brushstroke_list[0].setClicked();
     }
+    
+    
 }
 
  //buttons for clear and undo
@@ -62,8 +66,9 @@ var option_list = []
 for (var i=0; i<option_name_list.length; i++){
     option_list.push(new OptionGroup(xOp+i*wOp,yOp,wOp,hOp,option_name_list[i],colArray[0][0],colArray[0][1],colArray[0][2]))
     if(i==0){
-        option_list[0].setClickedPoly();
+        option_list[0].setClicked();
     }
+    
 }
 
 // subbuttons for number of points in a star
@@ -72,7 +77,7 @@ var option_list2 = []
 for (var i=0; i<option_name_list2.length; i++){
     option_list2.push(new OptionGroup2(xOp2+i*wOp2,yOp2,wOp2,hOp2,option_name_list2[i],colArray[0][0],colArray[0][1],colArray[0][2]))
     if(i==0){
-        option_list2[0].setClickedStar();
+        option_list2[0].setClicked();
     }
 }
 

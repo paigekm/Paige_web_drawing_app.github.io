@@ -150,7 +150,7 @@ class ControlObject{
         }
         ctx.restore();
 
-        if(this.mouseDown == true && this.inBounds == true && CircleButton.shape !== "L" && CircleButton.shape !== "M" && CircleButton.shape !== "S" ){
+        if(this.mouseDown == true && this.inBounds == true && Button.shape != "Brush"){
             this.drawGuide();
         }
 

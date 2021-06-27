@@ -186,10 +186,12 @@ class CircleButton{
     }
 
     setClicked(){
+        console.log("click called")
         CircleButton.clicked = this;
         CircleButton.shape = this.text;
         
     }
+  
 
 }
 CircleButton.clicked = ""
@@ -362,11 +364,12 @@ class OptionGroup{
         ctx.fillText(this.text,this.x+this.w/2,this.y+this.h/2);
     }
 
-    setClickedPoly(){
+    setClicked(){
         OptionGroup.clicked = this;
         OptionGroup.value = this.text;
         
     }
+    
 }
 OptionGroup.clicked = ""
 OptionGroup.value = 5
@@ -452,11 +455,13 @@ class OptionGroup2{
         ctx.font=myFont;
         ctx.fillText(this.text,this.x+this.w/2,this.y+this.h/2);
     }
-    setClickedStar(){
+
+    setClicked(){
         OptionGroup2.clicked = this;
         OptionGroup2.value = this.text;
         
     }
+   
 
 }
 OptionGroup2.clicked = ""

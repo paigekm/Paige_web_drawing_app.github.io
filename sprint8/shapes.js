@@ -1,6 +1,6 @@
 console.log(" objects js is called")
 
-//creates a class for rectangle
+//creates a class to draw a rectangle
 class Rectangle{
     // passes the parameters for the rectangle through
     constructor(x,y,w,h,fillColour){
@@ -54,6 +54,7 @@ class Ellipse{
     }
 }
 
+// creates a class to make a new polygon
 class Polygon{
     constructor(Xc,Yc, r, n, S){
         console.log("Polygon");
@@ -97,6 +98,7 @@ class Polygon{
 
 }
 
+// creates a class to draw a new star
 class Star{
     // set variables to use
     constructor(Xc,Yc, r, num, S){
@@ -204,8 +206,6 @@ class Dot{
     finish(){
         this.finish = true;
     }
-
-    //??????????????????????? 
 
     draw(){
         // change the fill colour/state if the mouse is over or the point is selected
