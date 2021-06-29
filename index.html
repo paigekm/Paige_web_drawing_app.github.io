@@ -41,6 +41,7 @@
 					<li><a href="#6">Sprint 6</a></li>
 					<li><a href="#7">Sprint 7</a></li>
 					<li><a href="#8">Sprint 8</a></li>
+					<li><a href="#9">Sprint 9</a></li>
 
 				</ul>
 			</div>
@@ -391,15 +392,79 @@ I also plan to adapt the colour scheme so it is more appealing to the eye - alth
 I will also reflect more on my original purpose for the application and add features to aid Maths learning. One example is printing the names of the different polygons, and number of points on the star, when these shapes appear on the drawing page.</p>
 <hr>
 
+<h1 id="9" >Sprint Nine: Spinning/animated ellipse</h1>
+	<p><b>My aim in this version is to create an animated ellipse feature and button. This allows the user to create an ellipse that is rotating when placed in the drawing page.</p></b>
+<p>Plan</p>
+<img class="img-responsive" src="assets/img/spinningellipse_plan.jpg" alt=""><br>
+<p>Boards</p>
+<img class="img-responsive" src="assets/img/sprint9_kanban.jpg" alt="">
+<br><a href="sprint8/sprint8.html">Link to the canvas page</a><br><br><br>
+<p>Testing</p>
+<div class="col-container">
+	<div class="col">
+		<video class="center" controls>
+			<source src="assets/vids/ellipse_being_drawn_test.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		  </video>
+	<p>After creating the new Spinning Ellipse function, I called the class in my main file and updated/pushed the new variable. This was to test there were no errors creating a rotating/animated ellipse on the canvas.</p>
+	</div>
+	 <div class="col">
+		<video class="center" controls>
+			<source src="assets/vids/sprint9_spinningellipse_final.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		  </video>
+	<p>Then I created a button to draw a spinning ellipse on the drawing page. I tested this new feature thoroughly, by using the swatch, 
+		dragging different sizes, dragging outside of the drawing page boundaries etc.</p>
+	</div>
+	</div>
+ <p>Reflect</p>
+ <p>In future versions my interactive web application to aid primary aged students with their understanding of Maths, I could consider adding more interactive features such as this one.
+	 <br>This is because it will draw young children's attention and make the program more fun to interact with. <br>
+	 An example of this is creating functions and buttons for 'Spinning Rectangle', 'Spinning Polygon', Spinning Star' etc. 
+	 Ideally I would want to develop a feature which could animate/begin rotating objects <b>after</b> they have been added to the drawing page. Or one singular button which could be clicked after selecting the shape you want, and then it will be an animated version.
+ </p>
+<hr>
+
 
 <h1> Relevant Implications Summary</h1>
+<p><b>Future Proofing</b><br>
+ 
+	Describe:<br>
+	This relevant implication considers whether or not it is easy to update and add new features to the program. A well ‘Future Proofed’ program means it is designed so that new features can be added and updated easily.
+	<br>Address:<br>
+	The main way I addressed Future Proofing, was by using precise and informative commenting and docstrings to describe the purpose of all my functions and sections of code. This makes it easier for another programmer to quickly be ‘onboarded’ to my project and understand my design decisions.
+	I also addressed this implication by looping the buttons in my main. This means that a new button can easily be added every time that a new feature/shape is added to the program, with little code changes. I discovered this as I’ve been adding new features throughout the program and building the application incrementally. This ‘sprint’ process and the way I’ve designed the programme addressed ‘Future Proofing’. The function based structure of my program also means that changes and new features can easily be integrated into the main program - as a new function can be tested in a testing file first, then integrated smoothly.
+	 
+	I further addressed this implication, by programming all elements (colours, shapes and buttons) as objects. Each object therefore has code independent of others, and it takes a defined set of parameters to work. Most of these new objects require information about the basic mouse position, whether it’s inside the drawing page boundary, and the swatch colour that has been selected. I addressed Future Proofing as all of these objects have a similar structure and an update function. They are all called by update() and that is how they appear on the web application. The control object page (canvas) is a central area where all of these objects are managed. Any programmer could receive my web application, and interpret my formatting to build on, remove and add their own new objects following my management process.
+	<br><br><b>Functionality</b><br>
+	Describe:<br>
+	A functional program works well and loads quickly. This relevant implication ensures that the program is free from bugs or glitches and does not crash. The program should also be able to work and appear properly on different browsers and devices, and all the links should work correctly. 
+	<br>Address:<br>
+	I addressed this implication by programming in mainly javascript. This means that the file size is low, and only consists of one main graphic - allowing my program to run and load quickly. I could observe the ‘load speed’ during my testing of each new sprint. This testing was all carried out through Visual Studio Code’s live web server where I stored my versions.
+	I addressed this implication through regular testing. I systematically tested the program after every sprint (a new sprint for every additional function/feature). I tested each function for each new shape, by pushing as a new variable in the main.js, to ensure it appeared properly on the canvas first. This meant that any new components were tested prior to being integrated into the main program. Then I tested again after integrating into the main program with its corresponding button etc. This ensured that my program was functional and that I found any bugs or potential crashes in a step-by-step iterative building process. Each sprint I also used console logging when an error occured to find the root of the problem, and also to analyze boundary test functions etc.
+	I further addressed Functionality, by executing ‘user interaction’ tests, by asking family members and friends to test using my program, and asked them for advice around making the user experience more self-explanatory/easy to follow. When carrying out extensive testing of my program’s Functionality myself, I also tested by clicking in multiple positions around the canvas (in and out of the drawing page etc.) and dragging in different directions. 
+	One example of testing helping me to develop the functionality of my program, is when drawing circular shapes such as an ellipse, the shapes often failed. I found this was because these objects were being given negative values for their radius, and so included the Math.abs function to make the radius positive regardless, and avoid any program crashes. 
+	<br><br><b>Usability</b><br>
+	Describe:<br>
+	This implication is about ensuring the program is easy to use. Usability is about helping and ensuring the user can recognise, diagnose and recover from errors. Usability ensures the user can not only avoid errors, but that the program can also correct errors without impacting the user. Usability also includes being able to restore to a previous state. This implication ensures the program follows usability heuristics, uses recognised conventions and matches the real world.
+	<br>Address:<br>
+	I addressed this implication by creating a simple web interface for my program. I tried to format the canvas page so that interaction was logical for the user eg. buttons having appropriate headings and their size reflecting their purpose (for example sub buttons being square rather than rectangular and located next to the correlated core shape buttons). I addressed the usability heuristic of ‘Visibility of System Status’ by communicating the current state of the program to the user at several points. Buttons physically reflect their change of state (change colour and border width when selected) and have hover colours so the user can clearly see what they are interacting with, and makes the next step, selecting a button, obvious.
+	I further addressed Usability by creating a draw guide, when the user drags on the drawing page to create a shape. This ensures that my program meets the usability heuristic of ‘Visibility of System Status’ as this guide communicates the size that the shape will be if they place it at that point. I also included ‘Undo’ and ‘Clear’ buttons which helps the user to recover from mistakes, as they can return to their previous place in the program. The ‘Clear’ button returning them to the original and blank state of the drawing page, is a recognised convention and matches the real world idea of ‘clearing’ a canvas/whiteboard etc. 
+	Finally I addressed this implication by uploading updated versions of my files via the terminal, and using Github to manage my files. Github allows the programmer to restore a previous state of their program during the design process.
+	<br></p>
  <hr>
+
+ <p>Development Process: Git commits</p>
+ <img class="img-responsive" src="assets/img/githistory_1.jpg" alt="">
+ <img class="img-responsive" src="assets/img/githistory_2.jpg" alt=""><br><br>
 
  <p>Final plans and future additions:</p>
  <img class="img-responsive" src="assets/img/end_projbacklog_1.jpg" alt="">
  <img class="img-responsive" src="assets/img/end_projbacklog2.jpg" alt="">
  <img class="img-responsive" src="assets/img/end_projbacklog3.jpg" alt="">
  <hr>
+
+
 			
 			</div>
 			<div class="footer">

@@ -2,13 +2,14 @@ console.log("main js is called")
 
 // receives the parameters from control object
 var C = new ControlObject(400,20,360,550);
+//var Spin = new SpinEllipse(450,100,200,100,colArray[0][4])
 //var D = new Dot(20,colArray[0][4]);
 //var St = new Star(450,100, 50, 10, colArray[0][4]);
 //var S = new Swatch(100,250,50,50,colArray[0][0],colArray[0][2],colArray[0][4],colArray[0][4]);
 //var S2 = new Swatch(100,300,50,50,colArray[0][0],colArray[0][3],colArray[0][4],colArray[0][4]);
 
 // list that contains the core shapes that have a new button each
-var button_name_list = ["Rectangle", "Ellipse", "Polygon", "Star", "Brush"]
+var button_name_list = ["Rectangle", "Ellipse", "Polygon", "Star", "Brush", "Spinning Ellipse"]
 var button_list = []
 // x and y variables for the different buttons and sub-button sets on the canvas, outside of drawing page
 var x = 30;
@@ -101,6 +102,7 @@ for (i=0; i<colArray.length; i++){
 function animate(){
     ctx.clearRect(0,0,width,height);
     C.update();
+    //Spin.update();
    // D.update();
     for (var i=0; i<button_list.length; i++){
         button_list[i].update();
