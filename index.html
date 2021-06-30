@@ -42,15 +42,12 @@
 					<li><a href="#7">Sprint 7</a></li>
 					<li><a href="#8">Sprint 8</a></li>
 					<li><a href="#9">Sprint 9</a></li>
+					<li><a href="#10">Summary</a></li>
 
 				</ul>
 			</div>
 			<div class="content">
 
-                
-
-			
-                    
 					<h1>Brief</h1>
 					<p><b>My aim is to create an interactive web drawing app, targetted at primary school students to aid their learning of Mathematics. <br>
 					It's interactive and colourful features will add fun into learning Mathematics, as they are able to learn different shapes and their names, number of sides and faces etc. in a hands on and creative way. <br>
@@ -85,7 +82,6 @@
   Your browser does not support the video tag.
   </video>
   </div>
-  <div class="col-container">
 	<div class="col">
   <video class="center" controls>
 	<source src="assets/vids/version1_error_intesting.mov" type="video/mp4">
@@ -201,7 +197,7 @@ Possible solution: as soon as the mouse leaves the canvas, it acts as if mouseUp
   </video>
   </div>
 <br>
-<p>Reflect</p><br>
+<p><b>Reflect:</b></p>
 <p>Problem found when testing:</p>
 <p>When I tested my program, I found the program crashed if the user tried to click in the drawing page without selecting a button first.
 	It only continuing working if the user selected Rect or Ellipse button and then tried to draw in the page. 
@@ -425,6 +421,22 @@ I will also reflect more on my original purpose for the application and add feat
  </p>
 <hr>
 
+<h1 id="10" >Summary</h1><br>
+<p>I reformatted the appearance of my web application to make it more appealing to the eye and intuitive for the user to follow.</p><br>
+<p>I commented all of my code so that the code is easier to follow and for the programmer (or any other experienced programmer) to find specific parts and adapt/improve the web application in the future. I also added some docstrings for my main functions, so that it is obvious what each new function/section of code does. I then removed all console logs except for the ones that show that each file has been called, as they are not needed anymore, and might slow down the speed of my application working.</p><br>
+<p>Finally I carried out some real user scenario testing with my family members, to try to catch any final errors that a user may make. This further improved my confidence that my program is intuative, fun for the user, and will not crash when in use.</p><br>
+	<br><p>User test with my sister of the final program:</p>
+		<video class="center" controls>
+			<source src="assets/vids/user_test_tegan.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		  </video>
+
+	<br><p>Final design of my program, with added headings to show the user what the subbuttons do, based on feedback and confusion from user testing. This ensures my final design is very intuitive and user-friendly.
+		I effectively used information from testing and trialling to improve the functionailty of the outcome.The interface was designed so that it was easy to use, and the colour and border width indications were made to make the selected buttons more obvious.
+	</p>
+	<img class="img-responsive" src="assets/img/final_design.jpg" alt="">
+<hr>
+
 
 <h1> Relevant Implications Summary</h1>
 <p><b>Future Proofing</b><br>
@@ -435,14 +447,15 @@ I will also reflect more on my original purpose for the application and add feat
 	The main way I addressed Future Proofing, was by using precise and informative commenting and docstrings to describe the purpose of all my functions and sections of code. This makes it easier for another programmer to quickly be ‘onboarded’ to my project and understand my design decisions.
 	I also addressed this implication by looping the buttons in my main. This means that a new button can easily be added every time that a new feature/shape is added to the program, with little code changes. I discovered this as I’ve been adding new features throughout the program and building the application incrementally. This ‘sprint’ process and the way I’ve designed the programme addressed ‘Future Proofing’. The function based structure of my program also means that changes and new features can easily be integrated into the main program - as a new function can be tested in a testing file first, then integrated smoothly.
 	 
-	I further addressed this implication, by programming all elements (colours, shapes and buttons) as objects. Each object therefore has code independent of others, and it takes a defined set of parameters to work. Most of these new objects require information about the basic mouse position, whether it’s inside the drawing page boundary, and the swatch colour that has been selected. I addressed Future Proofing as all of these objects have a similar structure and an update function. They are all called by update() and that is how they appear on the web application. The control object page (canvas) is a central area where all of these objects are managed. Any programmer could receive my web application, and interpret my formatting to build on, remove and add their own new objects following my management process.
+	I further addressed this implication, by programming all elements (colours, shapes and buttons) as objects. Each object therefore has code independent of others, and it takes a defined set of parameters to work. Most of these new objects require information about the basic mouse position, whether it’s inside the drawing page boundary, and the swatch colour that has been selected. I addressed Future Proofing as all of these objects have a similar structure and an update function. They are all called by update() and that is how they appear on the web application. The control object page (drawing page) is a central area where all of these objects are managed. Any programmer could receive my web application, and interpret my formatting to build on, remove and add their own new objects following my management process.
 	<br><br><b>Functionality</b><br>
 	Describe:<br>
 	A functional program works well and loads quickly. This relevant implication ensures that the program is free from bugs or glitches and does not crash. The program should also be able to work and appear properly on different browsers and devices, and all the links should work correctly. 
 	<br>Address:<br>
 	I addressed this implication by programming in mainly javascript. This means that the file size is low, and only consists of one main graphic - allowing my program to run and load quickly. I could observe the ‘load speed’ during my testing of each new sprint. This testing was all carried out through Visual Studio Code’s live web server where I stored my versions.
-	I addressed this implication through regular testing. I systematically tested the program after every sprint (a new sprint for every additional function/feature). I tested each function for each new shape, by pushing as a new variable in the main.js, to ensure it appeared properly on the canvas first. This meant that any new components were tested prior to being integrated into the main program. Then I tested again after integrating into the main program with its corresponding button etc. This ensured that my program was functional and that I found any bugs or potential crashes in a step-by-step iterative building process. Each sprint I also used console logging when an error occured to find the root of the problem, and also to analyze boundary test functions etc.
-	I further addressed Functionality, by executing ‘user interaction’ tests, by asking family members and friends to test using my program, and asked them for advice around making the user experience more self-explanatory/easy to follow. When carrying out extensive testing of my program’s Functionality myself, I also tested by clicking in multiple positions around the canvas (in and out of the drawing page etc.) and dragging in different directions. 
+	I addressed this implication through regular testing. I systematically tested the program after every sprint (a new sprint for every additional function/feature). I tested each function for each new shape, by pushing as a new variable in the main.js, to ensure it appeared properly on the canvas first. This meant that any new components were tested prior to being integrated into the main program. Then I tested again after integrating into the main program with its corresponding button etc. This ensured that my program was functional and that I found any bugs or potential crashes in a step-by-step iterative building process. Each sprint I also used console logging when an error occured to find the root of the problem, and also to analyze boundary test functions etc.</p>
+	<img class="img-responsive" src="assets/img/example1_consolelog.jpg" alt=""><br><br><img class="img-responsive" src="assets/img/example2_consolelog.jpg" alt="">
+	<p>I further addressed Functionality, by executing ‘user interaction’ tests, by asking family members and friends to test using my program, and asked them for advice around making the user experience more self-explanatory/easy to follow. When carrying out extensive testing of my program’s Functionality myself, I also tested by clicking in multiple positions around the canvas (in and out of the drawing page etc.) and dragging in different directions. 
 	One example of testing helping me to develop the functionality of my program, is when drawing circular shapes such as an ellipse, the shapes often failed. I found this was because these objects were being given negative values for their radius, and so included the Math.abs function to make the radius positive regardless, and avoid any program crashes. 
 	<br><br><b>Usability</b><br>
 	Describe:<br>
@@ -454,11 +467,15 @@ I will also reflect more on my original purpose for the application and add feat
 	<br></p>
  <hr>
 
- <p>Development Process: Git commits</p>
+ <p>Development Process: Git commits</p><br>
+ <p>I uploaded all of my files to Github to store my sprints as I built the program incrementally along the way. <br>
+	 I pushed these up to Github using the terminal. Here is evidence of my git commit history:</p>
+ <img class="img-responsive" src="assets/img/git_evidence.jpg" alt="">
+ <img class="img-responsive" src="assets/img/sprint9_gitcommit.jpg" alt="">
  <img class="img-responsive" src="assets/img/githistory_1.jpg" alt="">
  <img class="img-responsive" src="assets/img/githistory_2.jpg" alt=""><br><br>
 
- <p>Final plans and future additions:</p>
+ <p>Project backlog and potential future additions:</p>
  <img class="img-responsive" src="assets/img/end_projbacklog_1.jpg" alt="">
  <img class="img-responsive" src="assets/img/end_projbacklog2.jpg" alt="">
  <img class="img-responsive" src="assets/img/end_projbacklog3.jpg" alt="">
@@ -468,7 +485,7 @@ I will also reflect more on my original purpose for the application and add feat
 			
 			</div>
 			<div class="footer">
-				&copy; Copyright 2015
+				&copy; Copyright 2021
 			</div>
 		</div>
 	</body>

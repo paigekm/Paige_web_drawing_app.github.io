@@ -1,6 +1,9 @@
 console.log(" control object js is called ")
 
+// function to create the control object/canvas page
 class ControlObject{
+    // constructor passes x and y, starting positions of the drawing page box
+    // w and h define the width and height of the drawing page box
     constructor(x,y,w,h){
 
         // sets the mouse position variables to be 0
@@ -34,6 +37,7 @@ class ControlObject{
 
     }
 
+    // when the mouse is clicked down
     mDown(e){
         // mouse position should return the same 
         // as the coordinates of the canvas
@@ -43,26 +47,18 @@ class ControlObject{
         this.yMouseStart = e.offsetY;
         this.mouseDown = true;
         this.inBounds = this.inBoundsCheck(this.xMouseStart, this.yMouseStart, this.x, this.y, this.box_width, this.box_height)
-        // single event of the mouse clicking down
-        //this.draw();
-        // checks mouse down action has registered
-        //console.log("mouse down")
-        //console.log(this.inBounds)
        
-
+        // creates the brush (loop of dots being pushed) 
+        // size of brush width depending on which sub button selected on the canvas
         if(this.inBounds == true && Button.shape == "Brush"){
-            console.log(CircleButton.shape)
 
             if(CircleButton.shape == "L"){
-                console.log("L")
                 var temp = new Dot(20, Swatch.selected);
                 this.objectSet.push(temp);
             }else if(CircleButton.shape == "M"){
-                console.log("M")
                 var temp = new Dot(13, Swatch.selected);
                 this.objectSet.push(temp);
             }else if(CircleButton.shape == "S"){
-                console.log("S")
                 var temp = new Dot(7, Swatch.selected);
                 this.objectSet.push(temp);
         }
@@ -71,21 +67,16 @@ class ControlObject{
 
     }
 
+    // when the mouse moves it's location, x and y variables, on the canvas
     mMove(e){
         // determines postion of mouse when it clicks down
         // registers when the mouse is moving
         // when the mouse is moving...
         this.xMouse=e.offsetX;
         this.yMouse=e.offsetY;
-        // testing has registered
-        //console.log("mouse move")
-        // testing
-        var mouse_position = "x:" + this.xMouse + "  y:" + this.yMouse;
-        //console.log(mouse_position)
     }
 
-    var = option_list = []
-
+    // when the mouse is released after clicking down
     mUp(e){
         // mouse position when mouse unclicks
         this.mouseDown = false;
@@ -99,28 +90,25 @@ class ControlObject{
                 else if (Button.shape == "Ellipse"){
                     var temp = new Ellipse(this.xMouseStart, this.yMouseStart,this.w,this.h,Swatch.selected)
                 }
+                else if (Button.shape == "Spinning Ellipse"){
+                    var temp = new SpinEllipse(this.xMouseStart, this.yMouseStart,this.w,this.h,Swatch.selected);
+                }
                 else if (Button.shape == "Polygon"){
                     var temp = new Polygon(this.xMouseStart+this.w/2,this.yMouseStart+this.h/2,this.w/2,OptionGroup.value,Swatch.selected);
                 }
                 else if (Button.shape == "Star"){
                     var temp = new Star(this.xMouseStart+this.w/2,this.yMouseStart+this.h/2,this.w/2,OptionGroup2.value,Swatch.selected);
                 }
-                else if (Button.shape == "Spinning Ellipse"){
-                    var temp = new SpinEllipse(this.xMouseStart, this.yMouseStart,this.w,this.h,Swatch.selected);
-                }
                 // add new shape to the object list
                 if(temp){
                 this.objectSet.push(temp);
             }
-                // test it has been added to the object list
-                //console.log(this.objectSet)
             }
-        //console.log("mouse up")
     }
 }
 
+    // check for boundaries of control object/canvas, return true if inside or false if outside boundaries
     inBoundsCheck(xM, yM, x, y, w, h){
-        // check for boundaries, return true if inside or false if outside boundaries
         if(xM > x && xM < x+w && yM > y && yM < y+h){
             return true;
         }else{
@@ -128,6 +116,7 @@ class ControlObject{
         }
     }
 
+    // update function which updates regularly while the program is running
     update(){
         // clearing the canvas
         if(Button.shape == "Clear"){
@@ -151,14 +140,20 @@ class ControlObject{
         for(var i=0; i<this.objectSet.length; i++){
             this.objectSet[i].update()
         }
+        // save, clip and restore brings the canvas back to the front so that shapes appear 'cut off' if drawn outside of the drawing page
         ctx.restore();
 
+        // ensures a guide box follows the mouse where it drags around when creating every shape 
+        // except brush (because that is free flowing)
+        // this helps the user to see what size the shape will be if placed down at that moment
         if(this.mouseDown == true && this.inBounds == true && Button.shape != "Brush"){
             this.drawGuide();
         }
 
     }
 
+    // creates a guide box to inform the user while they are placing objects
+    // it will show a rectangular outline from the position clicked down, to the current mouse position it's been dragged to
     drawGuide(){
         this.w = this.xMouse - this.xMouseStart;
         this.h = this.yMouse - this.yMouseStart;
@@ -166,6 +161,7 @@ class ControlObject{
 
     }
 
+    // rectangle function to create the rectangular guide box which is called in the drawGuide function
     drawRect(x,y,w,h){
         ctx.beginPath();
         ctx.rect(x,y,w,h);
